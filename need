@@ -1,0 +1,29 @@
+#!/usr/bin/perl
+
+use utf8;
+use strict;
+use Tk;
+binmode(STDOUT, 'utf8');
+binmode(STDIN, 'utf8');
+
+
+
+my $top = new MainWindow;
+
+my $buttonTest01 = $top->Button(-text => "test")->pack;
+#my $top = Menu();
+
+my $f_group = "group";
+
+open (my $group, "<:utf8", $f_group) or die "Не могу открыть файл $f_group!";
+
+while (my $line = <$group>) {
+    print $line;
+}
+
+$top -> Label(-text => "test label") -> pack;
+#$top -> 
+#MainLoop;
+
+
+
